@@ -3,12 +3,11 @@ const { taskOne, taskTwo } = require("./tarea");
 async function main() {
   try{
     console.time("midiendo el tiempo de espera");
-    const value1 = await taskOne();
-    const value2 = await taskTwo();
+   const results =  await Promise.all([ taskOne(), taskTwo()])
     console.timeEnd("midiendo el tiempo de espera");
   
-    console.log(`the values the task one is ${value1}`);
-    console.log(`the values the task two is ${value2}`);
+    console.log(`the values the task one is  ${[results[0]]}`);
+    console.log(`the val ues the task two is ${[results[1]]}`);
   }catch(e){
      throw new Error(e);
   }

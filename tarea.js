@@ -6,7 +6,7 @@ module.exports = {
   async taskOne() {
    try{
     throw new Error("algun problema");
-    await newSet(4000);
+    await newSet(700);
     return "un valor";
    }catch(e){
     console.log(e)
@@ -15,7 +15,8 @@ module.exports = {
 
   async taskTwo() {
    try{
-    await newSet(2000);
+    // throw new Error("algun problema");
+    await newSet(100);
     return "segundo valor";
    }catch(e){
     throw new Error(e);
